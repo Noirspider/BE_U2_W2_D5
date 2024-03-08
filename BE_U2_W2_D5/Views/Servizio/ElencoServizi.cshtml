@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BE_U2_W2_D5.Models.Servizio>
+
+@{
+    ViewBag.Title = "ElencoServizi";
+}
+
+<h2>ElencoServizi</h2>
+
+<button>
+    @Html.ActionLink("Aggiungi servizio", "AggiungiServizio", "Servizio")
+</button>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrezzoTot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAggiunta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPrenotazione)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdServizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrezzoTot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAggiunta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPrenotazione)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
