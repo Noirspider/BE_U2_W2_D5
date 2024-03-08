@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                    <a href="/Home/Index">  <img style="width: 80px; height: 80px" src="~/Img/logo.png" /></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Prenotazioni", "PrenotazioneCliente", "Prenotazioni")</li>
+                    <li>@Html.ActionLink("Clienti", "DettagliCliente", "Cliente")</li>
+                    <li>@Html.ActionLink("Camere", "Camere", "Camere")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Esci", "LogOut", "Home") </li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login Admin", "Login", "Home") </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+       
+    </div>
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET by Gianluca Grillo</p>
+        </footer>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

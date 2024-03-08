@@ -1,0 +1,101 @@
+﻿@model BE_U2_W2_D5.Models.Prenotazioni
+
+@{
+    ViewBag.Title = "CreaPrenotazione";
+}
+
+<h2>Crea Prenotazione</h2>
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" id="contModifica">
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+      
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.IdCliente, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.IdCliente, new SelectList(ViewBag.ListaClienti, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdCliente, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.IdCamera, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.IdCamera, new SelectList(ViewBag.ListaCamera, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdCamera, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.DataPrenotazione, htmlAttributes: new { @class = "control-label " })
+                <div>
+                    @Html.EditorFor(model => model.DataPrenotazione, new { htmlAttributes = new { @class = "form-control", @type="date" } })
+                    @Html.ValidationMessageFor(model => model.DataPrenotazione, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Checkin, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Checkin, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.Checkin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.CheckOut, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.CheckOut, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.CheckOut, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.Caparra, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Caparra, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Caparra, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.TariffaSoggiorno, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.TariffaSoggiorno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TariffaSoggiorno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(model => model.TipoPensione, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownListFor(model => model.TipoPensione, new SelectList(ViewBag.ListaPensioni, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipoPensione, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class=" col-md-10">
+                    <input type="submit" value="Crea" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
