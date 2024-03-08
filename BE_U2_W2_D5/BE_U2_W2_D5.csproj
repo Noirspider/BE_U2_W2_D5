@@ -193,6 +193,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CamereController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\CostiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PrenotazioniController.cs" />
     <Compile Include="Controllers\ServizioController.cs" />
@@ -258,6 +259,10 @@
     <Content Include="Views\Camere\CancellaCamere.cshtml" />
     <Content Include="Views\Servizio\AggiungiServizio.cshtml" />
     <Content Include="Views\Servizio\ElencoServizi.cshtml" />
+    <Content Include="Views\Servizio\Edit.cshtml" />
+    <Content Include="Views\Servizio\Delete.cshtml" />
+    <Content Include="Views\Clienti\ElencoClienti.cshtml" />
+    <Content Include="Views\Costi\ElencoClientiConTotale.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

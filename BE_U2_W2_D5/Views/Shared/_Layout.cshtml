@@ -27,7 +27,9 @@
                     <li>@Html.ActionLink("Clienti", "DettagliCliente", "Cliente")</li>
                     <li>@Html.ActionLink("Camere", "Camere", "Camere")</li>
                     <li>@Html.ActionLink("Elenco Servizi", "ElencoServizi", "Servizio")</li>
-                    <li>@Html.ActionLink("Elenco Servizi", "ElencoServizi", "Servizio")</li>
+                    <li>@Html.ActionLink("Elenco Clienti e Totali", "ElencoClientiConTotale", "Costi")</li>
+
+
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Esci", "LogOut", "Home") </li>
@@ -44,7 +46,6 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-       
     </div>
 
         <footer>
